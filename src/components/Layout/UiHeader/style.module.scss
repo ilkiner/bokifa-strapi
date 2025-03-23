@@ -1,0 +1,135 @@
+.header {
+    background-color: white;
+    color: #10b981;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+    padding: 16px;
+}
+
+.logoWrapper {
+    grid-column: span 3;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-left: 106px;
+    img {
+        max-width: 150px;
+    }
+}
+
+.searchWrapper {
+    grid-column: span 6;
+    display: flex;
+    justify-content: center;
+    border-radius: 50px;
+}
+.inputField {
+    width: 808px;
+    height: 30px;
+
+    background-color: #e9ecef;
+    border: 1px solid #e9ecef;
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+}
+.btnSearchHeader {
+    display: flex;
+    align-items: center;
+    background-color: #0a9265;
+    padding: 13px 26px;
+    gap: 6px;
+    border-radius: 50px;
+    border: none;
+    margin-left: -50px;
+    z-index: 1;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 20px;
+
+    span {
+        color: white;
+    }
+    i {
+        font-size: 18px;
+        color: white;
+    }
+    &:hover {
+        background-color: #03311f;
+    }
+}
+
+.iconsWrapper {
+    grid-column: span 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding-right: 106px;
+
+    a {
+        color: black;
+        text-decoration: none;
+        i {
+            font-size: 26px;
+        }
+        &:hover {
+            color: #0a9265;
+        }
+    }
+}
+.NavMenu {
+    grid-column: span 12;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 106px;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+.navMenuList {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        a {
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: black;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+
+            &:hover {
+                color: #10b981;
+            }
+        }
+    }
+}
+
+.HeaderContact {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-align: right;
+
+    span {
+        font-size: 16px;
+        font-weight: 700;
+        color: #333;
+    }
+}
