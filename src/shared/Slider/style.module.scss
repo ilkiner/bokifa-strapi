@@ -1,0 +1,29 @@
+.scrollContainer {
+    width: 100%;
+    overflow: hidden;
+    background: #f9f5f0;
+    padding: 10px 0;
+    white-space: nowrap;
+}
+
+.scrollText {
+    display: inline-block;
+    animation: scrollText 15s linear infinite;
+}
+
+.scrollText span {
+    display: inline-block;
+    margin: 0 20px;
+    font-weight: bold;
+    font-size: 16px;
+    color: #0a9265;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(90%);
+    }
+    to {
+        transform: translateX(-49%);
+    }
+}

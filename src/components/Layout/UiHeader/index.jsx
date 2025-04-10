@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import styles from './style.module.scss';
 import "remixicon/fonts/remixicon.css";
+import { CartContext } from './../../../pages/CartContext/index.jsx'; 
 
 const UiHeader = () => {
+  const { cart } = useContext(CartContext);
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -26,17 +30,24 @@ const UiHeader = () => {
 
         </div>
         <div className={styles.iconsWrapper}>
-          <span style={{ cursor: 'pointer' }}> <a href="http://"><i class="ri-user-3-line"></i></a> </span>
-          <span style={{ cursor: 'pointer' }}> <a href="http://"><i class="ri-poker-hearts-line"></i></a> </span>
-          <span style={{ cursor: 'pointer' }}> <a href="http://"><i class="ri-shopping-bag-4-line"></i></a> </span>
+          <span style={{ cursor: 'pointer' }}> <a href="http://"><i className="ri-user-3-line"></i></a> </span>
+          <span style={{ cursor: 'pointer' }}> <a href="http://"><i className="ri-poker-hearts-line"></i></a> </span>
+          <Link to="/cart"> 
+            <span style={{ cursor: 'pointer' }}>
+              <i className="ri-shopping-bag-4-line"></i>
+              {cart.length > 0 && (
+                <span className={styles.cartCount}>{cart.length}</span>
+              )}
+            </span>
+          </Link>
         </div>
         <div className={styles.NavMenu}>
           <ul className={styles.navMenuList}>
-            <li><a href="http://">Home <i class="ri-arrow-drop-down-line"></i></a></li>
-            <li><a href="http://">Shop <i class="ri-arrow-drop-down-line"></i></a></li>
-            <li><a href="http://">Blogs <i class="ri-arrow-drop-down-line"></i></a></li>
-            <li><a href="http://">Pages <i class="ri-arrow-drop-down-line"></i></a></li>
-            <li><a href="http://">Contact </a></li>
+          <li><Link to="/">Home <i className="ri-arrow-drop-down-line"></i></Link></li>
+          <li><Link to="/products">Shop <i className="ri-arrow-drop-down-line"></i></Link></li>
+            <li><Link to="/blogs">Blogs <i className="ri-arrow-drop-down-line"></i></Link></li>
+            <li><Link to="/pages">Pages <i className="ri-arrow-drop-down-line"></i></Link></li>
+            <li><Link to="/contact">Contact </Link></li>
             
           </ul>
           <div className={styles.HeaderContact}>
